@@ -34,9 +34,9 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "authorName=" + authorName.getFirstName() + authorName.getSecondName() +
-                ", bookName='" + bookName + '\'' +
-                ", publishingYear=" + publishingYear +
+                "Автор: " + authorName.getFirstName() + authorName.getSecondName() +
+                " Название книги: " + bookName + '\'' +
+                ", Год издания: " + publishingYear +
                 '}';
     }
 
@@ -45,7 +45,10 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return publishingYear == book.publishingYear && Objects.equals(authorName, book.authorName) && Objects.equals(bookName, book.bookName);
+        return publishingYear == book.publishingYear &&
+                Objects.equals(authorName.getFirstName(), book.authorName.getFirstName()) &&
+                Objects.equals(authorName.getSecondName(), book.authorName.getSecondName())&&
+                Objects.equals(bookName, book.bookName);
     }
 
     @Override
