@@ -1,12 +1,14 @@
 package homeWork12;
 
 
+import java.util.Objects;
+
 public class App {
     public static void main(String[] args) {
         Author levTolstoy = new Author("Лев ", "Толстой ");
         Author fedorDostoevskiy = new Author("Федор ", "Достоевский ");
 
-        Book warAndPeas = new Book(levTolstoy,"'Война и мир' ", 1867);
+        Book warAndPeas = new Book(levTolstoy, "'Война и мир' ", 1867);
         Book krimeAndPunishment = new Book(fedorDostoevskiy, "'Преступление и наказание' ",
                 1866);
 
@@ -18,7 +20,10 @@ public class App {
                 + krimeAndPunishment.getBookName() + krimeAndPunishment.getPublishingYear());
         krimeAndPunishment.setPublishingYear(2023);
         System.out.println("krimeAndPunishment.getPublishingYear() = " + krimeAndPunishment.getPublishingYear());
-
+        System.out.println("krimeAndPunishment = " + krimeAndPunishment);
+        System.out.println("Objects.hash(krimeAndPunishment) = " + Objects.hash(krimeAndPunishment));
+        System.out.println("warAndPeas = " + warAndPeas);
+        System.out.println("Objects.hash(warAndPeas) = " + Objects.hash(warAndPeas));
 
     }
 }
